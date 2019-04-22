@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
     if @user
       session[:id] = @user[:id]
       redirect to '/account'
-    else 
+    else
       redirect to '/error'
     end
   end
