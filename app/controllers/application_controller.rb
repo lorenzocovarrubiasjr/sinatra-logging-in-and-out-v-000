@@ -24,6 +24,7 @@ class ApplicationController < Sinatra::Base
         @balance = current_user.balance
       else
         redirect to '/error'
+      end 
     erb :account
   end
 
