@@ -21,6 +21,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
+    binding.pry
     if is_logged_in?
         @username = current_user.username
         @balance = current_user.balance
