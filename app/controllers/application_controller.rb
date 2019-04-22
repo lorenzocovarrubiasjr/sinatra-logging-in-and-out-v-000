@@ -7,7 +7,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    @session = session
     erb :index
   end
 
@@ -15,7 +14,7 @@ class ApplicationController < Sinatra::Base
     @user = User.find_by(username: params[:login])
     if @user
       binding.pry
-      @session[:id] = @user[:id]
+      session[:id] = @user[:id]
       redirect '/account'
     end
   end
