@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     if is_logged_in?
         @username = current_user.username
         @balance = current_user.balance
-      else 
+      else
         redirect to '/error'
     erb :account
   end
