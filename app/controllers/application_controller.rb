@@ -21,14 +21,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    binding.pry
-    if is_logged_in?(session)
-        @username = current_user.username
-        @balance = current_user.balance
-      else
-        redirect to '/error'
-      end
-    erb :account
+    @current_user = User.find_by_id(session[:user_id])
+    if @current_user
+      erb :account
+    else
+      erb :error 
+    end 
   end
 
   get '/logout' do
