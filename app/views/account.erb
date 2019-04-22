@@ -6,7 +6,9 @@
       <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">
   </head>
   <body id="page-top"
-    <h2>Hello, <%=@username %>, your balance today is <%=@balance %>. </h2>
+    <% if Helpers.is_logged_in?(session) %>
+      <h1> Welcome <%Helpers.current_user.username%></h1>
+      <h2>Your balance today is <%Helpers.current_user.balance%>. </h2>
     <button type="button">Log Out</button>
   </body>
 </html>
