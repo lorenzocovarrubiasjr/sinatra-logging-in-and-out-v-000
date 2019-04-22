@@ -1,5 +1,5 @@
 require_relative '../../config/environment'
-require '/helpers/helpers'
+require '../helpers/helpers'
 class ApplicationController < Sinatra::Base
   configure do
     set :views, Proc.new { File.join(root, "../views/") }
